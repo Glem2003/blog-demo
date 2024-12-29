@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5", // 編譯的目標版本
+        "lib": [
+            "dom",
+            "esnext"
+        ], // 支援的庫
+        "allowJs": true, // 允許 JavaScript 檔案
+        "skipLibCheck": true, // 跳過庫的類型檢查，提升速度
+        "esModuleInterop": true, // 開啟 ES 模組兼容性
+        "strict": true, // 開啟所有嚴格檢查選項
+        "forceConsistentCasingInFileNames": true, // 強制檔案名一致
+        "module": "esnext", // 使用 ES 模組
+        "moduleResolution": "node", // 使用 Node 的模組解析策略
+        "resolveJsonModule": true, // 允許導入 JSON 模組
+        "jsx": "react-jsx" // 支援 React 18 的 JSX 轉換
+    },
+    "include": [
+        "src"
+    ], // 指定編譯的檔案夾
+}
