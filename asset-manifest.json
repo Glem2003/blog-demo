@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/blog-demo/static/css/main.c6bfc3c4.css",
+    "main.js": "/blog-demo/static/js/main.4bbae386.js",
+    "static/css/528.f638339c.chunk.css": "/blog-demo/static/css/528.f638339c.chunk.css",
+    "static/js/528.e7d508c0.chunk.js": "/blog-demo/static/js/528.e7d508c0.chunk.js",
+    "static/css/13.f638339c.chunk.css": "/blog-demo/static/css/13.f638339c.chunk.css",
+    "static/js/13.0d1582d5.chunk.js": "/blog-demo/static/js/13.0d1582d5.chunk.js",
+    "static/css/272.f638339c.chunk.css": "/blog-demo/static/css/272.f638339c.chunk.css",
+    "static/js/272.6861a23d.chunk.js": "/blog-demo/static/js/272.6861a23d.chunk.js",
+    "static/css/503.f638339c.chunk.css": "/blog-demo/static/css/503.f638339c.chunk.css",
+    "static/js/503.74040ebb.chunk.js": "/blog-demo/static/js/503.74040ebb.chunk.js",
+    "static/js/414.2d768547.chunk.js": "/blog-demo/static/js/414.2d768547.chunk.js",
+    "static/js/977.de8c0cd6.chunk.js": "/blog-demo/static/js/977.de8c0cd6.chunk.js",
+    "index.html": "/blog-demo/index.html",
+    "main.c6bfc3c4.css.map": "/blog-demo/static/css/main.c6bfc3c4.css.map",
+    "main.4bbae386.js.map": "/blog-demo/static/js/main.4bbae386.js.map",
+    "528.f638339c.chunk.css.map": "/blog-demo/static/css/528.f638339c.chunk.css.map",
+    "528.e7d508c0.chunk.js.map": "/blog-demo/static/js/528.e7d508c0.chunk.js.map",
+    "13.f638339c.chunk.css.map": "/blog-demo/static/css/13.f638339c.chunk.css.map",
+    "13.0d1582d5.chunk.js.map": "/blog-demo/static/js/13.0d1582d5.chunk.js.map",
+    "272.f638339c.chunk.css.map": "/blog-demo/static/css/272.f638339c.chunk.css.map",
+    "272.6861a23d.chunk.js.map": "/blog-demo/static/js/272.6861a23d.chunk.js.map",
+    "503.f638339c.chunk.css.map": "/blog-demo/static/css/503.f638339c.chunk.css.map",
+    "503.74040ebb.chunk.js.map": "/blog-demo/static/js/503.74040ebb.chunk.js.map",
+    "414.2d768547.chunk.js.map": "/blog-demo/static/js/414.2d768547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6bfc3c4.css",
+    "static/js/main.4bbae386.js"
+  ]
+}
