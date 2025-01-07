@@ -1,0 +1,46 @@
+$no-of-slots: 5
+$color: #9a12b3
+$bar-height: 20px
+$bar-width: 10px
+$bar-margin: 5px
+
+// 預先計算色彩集合
+$color-set: ()
+@for $dot from 0 through ($no-of-slots - 1)
+  $color-set: append($color-set, lighten($color, (100% / $no-of-slots) * $dot), space)
+
+// Mixin 移除複雜邏輯，專注於單一陰影
+@mixin genShadow($pos, $color-set, $no-of-slots, $bar-height, $bar-margin)
+  $shadows: ()
+  @for $dot from 0 through ($no-of-slots - 1)
+    $xy: ($dot * 10px + $dot * $bar-margin) $bar-height
+    $true-pos: $dot + $pos
+    $color-index: $true-pos % $no-of-slots
+    $shadow-props: $xy 0 0 nth($color-set, $color-index + 1)
+    $shadows: append($shadows, $shadow-props, comma)
+
+    box-shadow: $shadows
+
+// 預先生成 keyframes 的每個狀態
+@keyframes whirl-color-range
+  @for $pc from 0 through $no-of-slots
+    #{($pc * (100 / $no-of-slots)) * 1%}
+      @include genShadow($pc, $color-set, $no-of-slots, $bar-height, $bar-margin)
+
+// 元件樣式
+.color-range:before
+  animation: whirl-color-range 0.5s infinite ease
+  content: ''
+  height: $bar-height
+  $half: floor($no-of-slots / 2)
+  transform: translate(-(($bar-width * $half) + ($half * $bar-margin)), -($bar-height))
+  width: $bar-width
+
+.loading-container
+  align-items: center
+  display: flex
+  justify-content: center
+  height: 175px
+  overflow: hidden
+  position: relative
+  width: 100%
