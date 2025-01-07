@@ -1,0 +1,22 @@
+{
+    "Hero_Section": {
+        "Section_title": "Welcome to Blog Demo",
+        "Section_subtitle": "Sharing insights, stories, and ideas with the world."
+    },
+    "Our_Story": {
+        "title": "Our Story",
+        "text": "Blog Demo is a platform dedicated to sharing high-quality content, whether it is technology sharing, daily life or professional insights. Our goal is to provide inspiration and value to readers."
+    },
+    "Our_Mission": {
+        "title": "Our Mission",
+        "content": [
+            "Create an open and interesting content platform.",
+            "Promote the sharing and exchange of knowledge.",
+            "Support community members to learn and grow from each other."
+        ]
+    },
+    "Join_Us": {
+        "title": "Join Us",
+        "text": "If you are interested in sharing content, please contact us and become one of the Blog Demo authors!"
+    }
+}

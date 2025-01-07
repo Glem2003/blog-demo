@@ -20,10 +20,14 @@ const BlogFooter: React.FC = () => {
                         <div className="footer__text">{f.footer.text}</div>
                     </Col>
                     <Col>
-                        <Stack direction='horizontal'>
+                        <Stack direction='horizontal' className='justify-content-end'>
                             {footerIconItem.map(item => {
-                                const { customClass, content } = item
-                                return <div className={`footer__icon ${customClass !== null ? customClass : ''}`}>{content}</div>
+                                const { customClass, content, link } = item
+                                return (
+                                    <a href={link != null ? link : '/#!'}>
+                                        <div className={`footer__icon ${customClass !== null ? customClass : ''}`}>{content}</div>
+                                    </a>
+                                )
                             })}
                         </Stack>
                     </Col>

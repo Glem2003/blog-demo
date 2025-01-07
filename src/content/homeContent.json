@@ -1,0 +1,21 @@
+{
+    "Hero_Section": {
+        "title": "Welcome to Blog Demo",
+        "subtitle": "Explore the world of ideas and knowledge.",
+        "button_text": "Get Started"
+    },
+    "Latest_Posts": {
+        "title": "Latest Posts"
+    },
+    "Categories": {
+        "title": "Categories"
+    },
+    "About_Us": {
+        "title": "About Us",
+        "text": "Discover the story behind Blog Demo."
+    },
+    "Contact_Us": {
+        "title": "Contact Us",
+        "button_text": "Reach Out Today!"
+    }
+}

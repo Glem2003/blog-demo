@@ -10,9 +10,8 @@ const BlogArticle: React.FC<BlogArticleProps> = (props) => {
 
     return (
         <>
-            {
-                Data && Data.map(item => {
-
+            {Data && Data.length > 0 ? (
+                Data.map(item => {
                     const {
                         id,
                         type,
@@ -22,10 +21,9 @@ const BlogArticle: React.FC<BlogArticleProps> = (props) => {
                         updated_at: updatedAt
                     } = item
                     const sanitizedContent = DOMPurify.sanitize(content)
-
                     return (
                         <Card className="mb-4" key={id}>
-                            <Card.Header>{type}</Card.Header>
+                            <Card.Header>{type.toUpperCase()}</Card.Header>
                             <Card.Body>
                                 <Card.Title className="BlogArticle__title">{title}</Card.Title>
                                 <div dangerouslySetInnerHTML={{ __html: sanitizedContent }}></div>
@@ -37,7 +35,9 @@ const BlogArticle: React.FC<BlogArticleProps> = (props) => {
                         </Card>
                     )
                 })
-            }
+            ) : (
+                <p>No articles available.</p>
+            )}
         </>
     )
 }
