@@ -1,17 +1,17 @@
 import { Form } from "react-bootstrap";
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 // type
 import { ContactUsFormProps } from "../../../types/ContactUsFormProps";
 
 const ContactUsFormGroup: React.FC<ContactUsFormProps> = (props) => {
 
-    const { controlId, label, type, placeholder } = props
+    const { controlId, label, type, placeholder, as } = props
 
     return (
-        <Form.Group className="mb-3" controlId={controlId}>
-            <Form.Label>{label}</Form.Label>
-            <Form.Control type={type} placeholder={placeholder} />
-        </Form.Group>
+        <FloatingLabel controlId={controlId} label={label} className="mb-3">
+            <Form.Control type={type} placeholder={placeholder} as={as ? as : 'input'} />
+        </FloatingLabel>
     )
 }
 

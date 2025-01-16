@@ -15,9 +15,10 @@ const BlogNavBar: React.FC = () => {
                     <Navbar.Collapse>
                         <Nav>
                             <Nav.Link ><Link to={'/'} className="link-secondary text-decoration-none">Home</Link></Nav.Link>
-                            <Nav.Link><Link to={'/Blog'} className="link-secondary text-decoration-none">Blog</Link></Nav.Link>
+                            <Nav.Link><Link to={'/blog'} className="link-secondary text-decoration-none">Blog</Link></Nav.Link>
                             <Nav.Link><Link to={'/about_us'} className="link-secondary text-decoration-none">About us</Link></Nav.Link>
                             <Nav.Link><Link to={'/contact_us'} className="link-secondary text-decoration-none">Contact us</Link></Nav.Link>
+                            <Nav.Link><Link to={'/backstage'} className="link-secondary text-decoration-none">Backstage</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

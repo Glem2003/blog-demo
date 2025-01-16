@@ -7,6 +7,7 @@ const Home = lazy(() => import('../pages/HomePage'))
 const Blog = lazy(() => import("../pages/BlogPage"))
 const AboutUs = lazy(() => import('../pages/AboutUsPage'))
 const ContactUs = lazy(() => import('../pages/ContactUsPage'))
+const Backend = lazy(() => import('../pages/BackstagePage'))
 
 // Routes Config
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
     { path: '/blog', element: <Blog /> },
     { path: '/about_us', element: <AboutUs /> },
     { path: '/contact_us', element: <ContactUs /> },
+    { path: '/backstage', element: <Backend/> },
     { path: "*", element: <Home /> }
 ]
 
