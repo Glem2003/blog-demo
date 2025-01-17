@@ -1,4 +1,4 @@
-import WebRoute from './Router';
+import WebRoute from './router';
 
 // style
 import './assets/style/root.sass'

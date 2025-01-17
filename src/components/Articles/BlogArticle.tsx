@@ -6,7 +6,7 @@ import { BlogArticleProps } from '../../types/BlogArticleProps';
 
 const BlogArticle: React.FC<BlogArticleProps> = (props) => {
 
-    const { Data } = props
+    const { data: Data } = props
 
     return (
         <>

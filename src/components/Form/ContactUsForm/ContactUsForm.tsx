@@ -12,6 +12,7 @@ const ContactUsForm: React.FC = () => {
                 <Card.Text className="text-center">
                     If you have any questions, let us know by filling out the form below!
                 </Card.Text>
+
                 <Form>
                     {BlogGroupConfig.map((item, index) => {
                         return <ContactUsFormGroup key={index} {...item} />

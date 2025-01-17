@@ -21,6 +21,7 @@ export const BlogGroupConfig = [
         controlId: 'message',
         label: 'Other Message',
         type: 'textarea',
+        as:'textarea',
         placeholder: "Enter Message"
     }
 ]

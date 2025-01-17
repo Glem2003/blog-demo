@@ -1,0 +1,13 @@
+{
+    "AlertContent": {
+        "title": "Reminder",
+        "text": "Due to technical issues with the API server, this function cannot modify the original data. Please feel free to use it. Thanks."
+    },
+    "FormButton": {
+        "error": "Error",
+        "reset": "Reset",
+        "submit": "Submit",
+        "load": "Load",
+        "loading": "Loading..."
+    }
+}

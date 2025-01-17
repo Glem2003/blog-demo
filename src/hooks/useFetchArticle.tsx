@@ -7,17 +7,20 @@ import { Article } from '../types/BlogArticleProps';
 // utils
 import fetchApi from '../utils/fetchApi';
 
-const useFetchArticle = () => {
+// Shared utility hook
+const useFetch = <T,>(API_URL: string) => {
 
-    const [articles, setArticles] = useState<Article[]>([])
+    const [data, setData] = useState<T | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-        const loadArticles = async () => {
+        const fetchData = async () => {
+            setLoading(true)
+            setError(null)
             try {
-                const data = await fetchApi()
-                setArticles(data)
+                const result = await fetchApi(API_URL)
+                setData(result as T)
             } catch (err: any) {
                 setError(err.message)
             } finally {
@@ -25,10 +28,12 @@ const useFetchArticle = () => {
             }
         };
 
-        loadArticles()
-    }, [])
+        fetchData()
+    }, [API_URL])
 
-    return { articles, loading, error }
+    return { data, loading, error }
 }
 
-export default useFetchArticle
+export const useFetchArticles = (API_URL: string) => {
+    return useFetch<Article[]>(API_URL)
+}

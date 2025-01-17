@@ -1,5 +1,10 @@
+export interface ApiResponse<T> {
+    data: T;
+    message: string
+}
+
 export interface Article {
-    id: number
+    id: number | null
     title: string
     type: string
     content: string
@@ -7,6 +12,13 @@ export interface Article {
     updated_at: string
 }
 
+export interface ArticleData {
+    title: string
+    type: string
+    content: string
+    updated_at: string
+}
+
 export interface BlogArticleProps {
-    Data: Article[]
+    data: Article[]
 }

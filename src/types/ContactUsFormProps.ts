@@ -3,4 +3,5 @@ export interface ContactUsFormProps {
     label: string
     type: string
     placeholder: string
+    as?: React.ElementType | string
 }
