@@ -10,7 +10,11 @@ const ContactUsFormGroup: React.FC<ContactUsFormProps> = (props) => {
 
     return (
         <FloatingLabel controlId={controlId} label={label} className="mb-3">
-            <Form.Control type={type} placeholder={placeholder} as={as ? as : 'input'} />
+            <Form.Control
+                type={type}
+                placeholder={placeholder}
+                as={as as React.ElementType}
+            />
         </FloatingLabel>
     )
 }
