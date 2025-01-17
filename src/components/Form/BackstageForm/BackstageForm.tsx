@@ -70,9 +70,8 @@ const BackstageForm: React.FC<BackstageFormProps> = (props) => {
                         min={1}
                         placeholder="Enter id"
                         onChange={handleChange}
-                        value={formData.id || articles?.length}
+                        value={formData.id || []}
                         disabled={currentValue === 'add'}
-                        required
                     />
                 </Form.Group>
 

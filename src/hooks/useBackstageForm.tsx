@@ -22,7 +22,6 @@ const useBackstageForm = ({ currentValue }: UseBackstageFormProps) => {
     const [Active, setActive] = useState<boolean>(false) // type checkbox
     const [loading, setLoading] = useState<boolean>(false) // load button
 
-    // TODO //
     const [message, setMessage] = useState<string | null>(null) // data message
     const [isError, setError] = useState<string | null>(null) // error message
 
