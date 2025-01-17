@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 // type
 import { UseAlertShowProps } from '../types/HooksProps';
 
-const useAlertShow = ({ isError, onClearError }: UseAlertShowProps) => {
+const useAlertShow = ({ isError, onClearError, isMessage, onClearMessage }: UseAlertShowProps) => {
     const [show, setShow] = useState<boolean>(false);
 
     useEffect(() => {
@@ -12,10 +12,20 @@ const useAlertShow = ({ isError, onClearError }: UseAlertShowProps) => {
         }
     }, [isError])
 
+    useEffect(() => {
+        if (isMessage) {
+            setShow(true)
+        }
+    }, [isMessage])
+
     const handleClose = () => {
         setShow(false);
         if (onClearError) {
             onClearError();
+        }
+
+        if (onClearMessage) {
+            onClearMessage();
         }
     };
 

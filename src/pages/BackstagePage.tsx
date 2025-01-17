@@ -10,23 +10,38 @@ import upperFirstWord from "../utils/upperFirstWord"
 // content
 import { backstageContent } from "../content"
 
-// TO DO //
-const BackButtonConfig = ['add', 'edit', 'delete']
+// hook
+import useAlertShow from '../hooks/useAlertShow';
+
+//type
+import BackButtonConfig from "../data/backButtonConfig"
 
 const BackstagePage = () => {
 
+    const { AlertContent } = backstageContent
     const [isActive, setActive] = useState<string | null>(null) // 'add', 'edit', 'delete'
+
+    const { show, handleClose } = useAlertShow({
+        isMessage: AlertContent.text,
+    })
 
     const handleClick = (value: string) => {
         setActive(value)
     }
 
-    const { AlertContent } = backstageContent
-
     return (
         <DefaultPage>
+
+            <BlogAlert
+                title={AlertContent.title}
+                text={AlertContent.text}
+                show={show}
+                onHide={handleClose}
+                background="bg-info"
+            />
+
             <Container>
-                <BlogAlert title={AlertContent.title} text={AlertContent.text} />
+
                 <ButtonGroup className="w-100 mb-4">
                     {BackButtonConfig.map((item) => {
                         return <Button type="button" value={item} onClick={() => handleClick(item)}>{upperFirstWord(item)}</Button>

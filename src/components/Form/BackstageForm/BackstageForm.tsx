@@ -10,9 +10,13 @@ import BackstageFormButton from './BackstageForm__button';
 // type
 import { BackstageFormProps } from "../../../types/BackstageFormProps";
 
+// content
+import { backstageContent } from "../../../content";
+
 const BackstageForm: React.FC<BackstageFormProps> = (props) => {
 
     const { currentValue } = props
+    const { error, reset, submit, load, loading: lding } = backstageContent.FormButton
 
     const {
         handleToggle,
@@ -25,39 +29,35 @@ const BackstageForm: React.FC<BackstageFormProps> = (props) => {
         isError,
         setError,
         articles,
+        message,
+        setMessage,
         formData
     } = useBackstageForm({ currentValue })
 
     const { show, handleClose } = useAlertShow({
         isError,
-        onClearError: () => setError(null)
+        onClearError: () => setError(null),
+        isMessage: message,
+        onClearMessage: () => setMessage(null)
     })
 
     const types = new Set((articles || []).flatMap((article) => article.type))
     const typesArray = [...types]
 
     const alertBackground = (value: string | null) => {
-        if (value === "Must not be empty !!") {
-            return 'bg-warning'
-        } else if (value === 'article not found') {
-            return 'bg-warning'
-        } else if (value === null) {
-            return 'bg-white'
-        } else {
-            return 'bg-danger'
-        }
+        return value === "Must not be empty !!" || value === 'article not found' ? 'bg-warning' : value === 'succuss' ? 'bg-success' : value === null ? 'bg-white' : 'bg-danger'
     }
 
     return (
         <>
 
             <BlogAlert
-                title="Error"
-                text={isError}
+                title={error}
+                text={isError || message}
                 error={isError}
                 show={show}
                 onHide={handleClose}
-                background={alertBackground(isError)}
+                background={alertBackground(isError || message)}
             />
 
             <Form>
@@ -144,21 +144,21 @@ const BackstageForm: React.FC<BackstageFormProps> = (props) => {
                                 type='button'
                                 onClick={() => handleLoadSearch(formData.id || 1)}
                                 disabled={loading}
-                                content={loading ? 'Loading...' : 'Load'}
+                                content={loading ? lding : load}
                             />
                             <BackstageFormButton
                                 type="reset"
                                 variant="danger"
                                 onClick={handleReset}
-                                content='Reset'
+                                content={reset}
                             />
                         </Stack>
 
                         <BackstageFormButton
-                            type="submit"
+                            type="button"
                             onClick={() => handleSubmit(currentValue)}
                             disabled={formData.created_at ? false : true}
-                            content='Submit'
+                            content={submit}
                         />
                     </>
                 ) : (
@@ -167,12 +167,12 @@ const BackstageForm: React.FC<BackstageFormProps> = (props) => {
                             type="reset"
                             variant="danger"
                             onClick={handleReset}
-                            content='Reset'
+                            content={reset}
                         />
                         <BackstageFormButton
                             type="button"
                             onClick={() => handleSubmit(currentValue)}
-                            content='Submit'
+                            content={submit}
                         />
                     </>
                 )}

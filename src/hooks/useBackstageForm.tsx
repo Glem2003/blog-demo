@@ -72,12 +72,15 @@ const useBackstageForm = ({ currentValue }: UseBackstageFormProps) => {
                     return;
                 }
                 await postArticle(formData);
+                setMessage('succuss')
                 setFormData(defaultFormData)
             } else if (current === 'edit') {
                 await putArticle(formData.id || 1, formData);
+                setMessage('succuss')
                 setFormData(defaultFormData)
             } else if (current === 'delete') {
                 await deleteArticle(formData.id || 1);
+                setMessage('succuss')
                 setFormData(defaultFormData)
             } else {
                 setError("Parameter Error");
@@ -131,6 +134,8 @@ const useBackstageForm = ({ currentValue }: UseBackstageFormProps) => {
         loading,
         isError,
         setError,
+        message,
+        setMessage,
         articles,
         formData
     }
